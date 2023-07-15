@@ -289,7 +289,7 @@ try:
 			if (needtostart == 1):
 				needtostart = 0
 				#for troubleshooting: uncomment
-				print("Starting main holding video")
+				print("Reproduciendo video principal")
 				m = subprocess.Popen(['omxplayer', '--loop', '-b', '--no-osd', startmovie], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to start video (for killing logic)
 				running = 0
@@ -308,62 +308,90 @@ try:
 			if (needtostart == 1):
 				#kill off other videos first
 				if (running == 0):
-					print("Killing start video")
-					m.stdin.write(b'q')
-					m.stdin.flush()
-					#Let's sink the boot in
-					m.kill()
+					print("Finalizando video principal")
+					try:	
+						m.stdin.write(b'q')
+						m.stdin.flush()
+						m.kill()
+					except BrokenPipeError as error:
+						print(error)
+					#Let's sink the boot in	
+				
 				elif (running == 1):
-					print("Killing video 1 (restarting it)")
-					a.stdin.write(b'q')
-					a.stdin.flush()
-					#Let's sink the boot in
-					a.kill()
+					print("Finalizando video 1 (Reiniciando)")
+					try:
+						a.stdin.write(b'q')
+						a.stdin.flush()
+						#Let's sink the boot in
+						a.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 2):
-					print("Killing video 2")
-					b.stdin.write(b'q')
-					b.stdin.flush()
-					#Let's sink the boot in
-					b.kill()
+					print("Finalizando video 2")
+					try:
+						b.stdin.write(b'q')
+						b.stdin.flush()
+						#Let's sink the boot in
+						b.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 3):
-					print("Killing video 3")
-					c.stdin.write(b'q')
-					c.stdin.flush()
-					#Let's sink the boot in
-					c.kill()
+					print("Finalizando video 3")
+					try:
+						c.stdin.write(b'q')
+						c.stdin.flush()
+						#Let's sink the boot in
+						c.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 4):
-					print("Killing video 4")
-					d.stdin.write(b'q')
-					d.stdin.flush()
-					#Let's sink the boot in
-					d.kill()
+					print("Finalizando video 4")
+					try:
+						d.stdin.write(b'q')
+						d.stdin.flush()
+						#Let's sink the boot in
+						d.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 5):
-					print("Killing video 5")
-					e.stdin.write(b'q')
-					e.stdin.flush()
-					#Let's sink the boot in
-					e.kill()
+					print("Finalizando video 5")
+					try:
+						e.stdin.write(b'q')
+						e.stdin.flush()
+						#Let's sink the boot in
+						e.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 6):
-					print("Killing video 6")
-					f.stdin.write(b'q')
-					f.stdin.flush()
-					#Let's sink the boot in
-					f.kill()
+					print("Finalizando video 6")
+					try:	
+						f.stdin.write(b'q')
+						f.stdin.flush()
+						#Let's sink the boot in
+						f.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 7):
-					print("Killing video 7")
-					g.stdin.write(b'q')
-					g.stdin.flush()
-					#Let's sink the boot in
-					g.kill()
+					print("Finalizando video 7")
+					try:
+						g.stdin.write(b'q')
+						g.stdin.flush()
+						#Let's sink the boot in
+						g.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 8):
-					print("Killing video 8")
-					h.stdin.write(b'q')
-					h.stdin.flush()
-					#Let's sink the boot in
-					h.kill()
+					print("Finalizando video 8")
+					try:
+						h.stdin.write(b'q')
+						h.stdin.flush()
+						#Let's sink the boot in
+						h.kill()
+					except BrokenPipeError as error:
+						print(error)
 
 				#for troubleshooting: uncomment
-				print("Starting first triggered video")
+				print("Iniciando la reproducción del primer video")
 				needtostart = 0
 				a = subprocess.Popen(['omxplayer', '-b', '--no-osd', movie1], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to video 1 (for killing logic)
@@ -386,62 +414,86 @@ try:
 			if (needtostart == 1):
 				#kill off other videos first
 				if (running == 0):
-					print("Killing start video")
+					print("Finalizando video principal")
 					m.stdin.write(b'q')
 					m.stdin.flush()
 					#Let's sink the boot in
 					m.kill()
 				elif (running == 1):
-					print("Killing video 1")
-					a.stdin.write(b'q')
-					a.stdin.flush()
-					#Let's sink the boot in
-					a.kill()
+					print("Finalizando video 1")
+					try:
+						a.stdin.write(b'q')
+						a.stdin.flush()
+						#Let's sink the boot in
+						a.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 2):
-					print("Killing video 2 (Restarting it)")
-					b.stdin.write(b'q')
-					b.stdin.flush()
-					#Let's sink the boot in
-					b.kill()
+					print("Finalizando video 2 (Reiniciando)")
+					try:
+						b.stdin.write(b'q')
+						b.stdin.flush()
+						#Let's sink the boot in
+						b.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 3):
-					print("Killing video 3")
-					c.stdin.write(b'q')
-					c.stdin.flush()
-					#Let's sink the boot in
-					c.kill()
+					print("Finalizando video 3")
+					try:
+						c.stdin.write(b'q')
+						c.stdin.flush()
+						#Let's sink the boot in
+						c.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 4):
-					print("Killing video 4")
-					d.stdin.write(b'q')
-					d.stdin.flush()
-					#Let's sink the boot in
-					d.kill()
+					print("Finalizando video 4")
+					try:
+						d.stdin.write(b'q')
+						d.stdin.flush()
+						#Let's sink the boot in
+						d.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 5):
-					print("Killing video 5")
-					e.stdin.write(b'q')
-					e.stdin.flush()
-					#Let's sink the boot in
-					e.kill()
+					print("Finalizando video 5")
+					try:	
+						e.stdin.write(b'q')
+						e.stdin.flush()
+						#Let's sink the boot in
+						e.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 6):
-					print("Killing video 6")
-					f.stdin.write(b'q')
-					f.stdin.flush()
-					#Let's sink the boot in
-					f.kill()
+					print("Finalizando video 6")
+					try:
+						f.stdin.write(b'q')
+						f.stdin.flush()
+						#Let's sink the boot in
+						f.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 7):
-					print("Killing video 7")
-					g.stdin.write(b'q')
-					g.stdin.flush()
-					#Let's sink the boot in
-					g.kill()
+					print("Finalizando video 7")
+					try:
+						g.stdin.write(b'q')
+						g.stdin.flush()
+						#Let's sink the boot in
+						g.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 8):
-					print("Killing video 8")
-					h.stdin.write(b'q')
-					h.stdin.flush()
-					#Let's sink the boot in
-					h.kill()
+					print("Finalizando video 8")
+					try:
+						h.stdin.write(b'q')
+						h.stdin.flush()
+						#Let's sink the boot in
+						h.kill()
+					except BrokenPipeError as error:
+						print(error)
 
 				#for troubleshooting: uncomment
-				print("Starting first triggered video")
+				print("Iniciando reproducción del segundo video")
 				needtostart = 0
 				b = subprocess.Popen(['omxplayer', '-b', '--no-osd', movie2], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to video 2 (for killing logic)
@@ -464,62 +516,89 @@ try:
 			if (needtostart == 1):
 				#kill off other videos first
 				if (running == 0):
-					print("Killing start video")
-					m.stdin.write(b'q')
-					m.stdin.flush()
-					#Let's sink the boot in
-					m.kill()
+					print("Finalizando video inicial")
+					try:
+						m.stdin.write(b'q')
+						m.stdin.flush()
+						#Let's sink the boot in
+						m.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 1):
-					print("Killing video 1")
-					a.stdin.write(b'q')
-					a.stdin.flush()
-					#Let's sink the boot in
-					a.kill()
+					print("Finalizando video 1")
+					try:
+						a.stdin.write(b'q')
+						a.stdin.flush()
+						#Let's sink the boot in
+						a.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 2):
-					print("Killing video 2")
-					b.stdin.write(b'q')
-					b.stdin.flush()
-					#Let's sink the boot in
-					b.kill()
+					print("Finalizando video 2")
+					try:
+						b.stdin.write(b'q')
+						b.stdin.flush()
+						#Let's sink the boot in
+						b.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 3):
-					print("Killing video 3 (Restarting it)")
-					c.stdin.write(b'q')
-					c.stdin.flush()
-					#Let's sink the boot in
-					c.kill()
+					print("Finalizando video 3 (Reiniciando)")
+					try:
+						c.stdin.write(b'q')
+						c.stdin.flush()
+						#Let's sink the boot in
+						c.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 4):
-					print("Killing video 4")
-					d.stdin.write(b'q')
-					d.stdin.flush()
-					#Let's sink the boot in
-					d.kill()
+					print("Finalizando video 4")
+					try:
+						d.stdin.write(b'q')
+						d.stdin.flush()
+						#Let's sink the boot in
+						d.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 5):
-					print("Killing video 5")
-					e.stdin.write(b'q')
-					e.stdin.flush()
-					#Let's sink the boot in
-					e.kill()
+					print("Finalizando video 5")
+					try:
+						e.stdin.write(b'q')
+						e.stdin.flush()
+						#Let's sink the boot in
+						e.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 6):
-					print("Killing video 6")
-					f.stdin.write(b'q')
-					f.stdin.flush()
-					#Let's sink the boot in
-					f.kill()
+					print("Finalizando video 6")
+					try:
+						f.stdin.write(b'q')
+						f.stdin.flush()
+						#Let's sink the boot in
+						f.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 7):
-					print("Killing video 7")
-					g.stdin.write(b'q')
-					g.stdin.flush()
-					#Let's sink the boot in
-					g.kill()
+					print("Finalizando video 7")
+					try:
+						g.stdin.write(b'q')
+						g.stdin.flush()
+						#Let's sink the boot in
+						g.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 8):
-					print("Killing video 8")
-					h.stdin.write(b'q')
-					h.stdin.flush()
-					#Let's sink the boot in
-					h.kill()
+					print("Finalizando video 8")
+					try:
+						h.stdin.write(b'q')
+						h.stdin.flush()
+						#Let's sink the boot in
+						h.kill()
+					except BrokenPipeError as error:
+						print(error)
 
 				#for troubleshooting: uncomment
-				print("Starting first triggered video")
+				print("Iniciando reproducción del tercer video")
 				needtostart = 0
 				c = subprocess.Popen(['omxplayer', '-b', '--no-osd', movie3], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to video 2 (for killing logic)
@@ -542,62 +621,89 @@ try:
 			if (needtostart == 1):
 				#kill off other videos first
 				if (running == 0):
-					print("Killing start video")
-					m.stdin.write(b'q')
-					m.stdin.flush()
-					#Let's sink the boot in
-					m.kill()
+					print("Finalizando video principal")
+					try:
+						m.stdin.write(b'q')
+						m.stdin.flush()
+						#Let's sink the boot in
+						m.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 1):
-					print("Killing video 1")
-					a.stdin.write(b'q')
-					a.stdin.flush()
-					#Let's sink the boot in
-					a.kill()
+					print("Finalizando video 1")
+					try:
+						a.stdin.write(b'q')
+						a.stdin.flush()
+						#Let's sink the boot in
+						a.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 2):
-					print("Killing video 2")
-					b.stdin.write(b'q')
-					b.stdin.flush()
-					#Let's sink the boot in
-					b.kill()
+					print("Finalizando video 2")
+					try:
+						b.stdin.write(b'q')
+						b.stdin.flush()
+						#Let's sink the boot in
+						b.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 3):
-					print("Killing video 3")
-					c.stdin.write(b'q')
-					c.stdin.flush()
-					#Let's sink the boot in
-					c.kill()
+					print("Finalizando video 3")
+					try:
+						c.stdin.write(b'q')
+						c.stdin.flush()
+						#Let's sink the boot in
+						c.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 4):
-					print("Killing video 4 (Restarting it)")
-					d.stdin.write(b'q')
-					d.stdin.flush()
-					#Let's sink the boot in
-					d.kill()
+					print("Finalizando video 4 (Reiniciando)")
+					try:
+						d.stdin.write(b'q')
+						d.stdin.flush()
+						#Let's sink the boot in
+						d.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 5):
-					print("Killing video 5")
-					e.stdin.write(b'q')
-					e.stdin.flush()
-					#Let's sink the boot in
-					e.kill()
+					print("Finalizando video 5")
+					try:
+						e.stdin.write(b'q')
+						e.stdin.flush()
+						#Let's sink the boot in
+						e.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 6):
-					print("Killing video 6")
-					f.stdin.write(b'q')
-					f.stdin.flush()
-					#Let's sink the boot in
-					f.kill()
+					print("Finalizando video 6")
+					try:
+						f.stdin.write(b'q')
+						f.stdin.flush()
+						#Let's sink the boot in
+						f.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 7):
-					print("Killing video 7")
-					g.stdin.write(b'q')
-					g.stdin.flush()
-					#Let's sink the boot in
-					g.kill()
+					print("Finalizando video 7")
+					try:
+						g.stdin.write(b'q')
+						g.stdin.flush()
+						#Let's sink the boot in
+						g.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 8):
-					print("Killing video 8")
-					h.stdin.write(b'q')
-					h.stdin.flush()
-					#Let's sink the boot in
-					h.kill()
+					print("Finalizando video 8")
+					try:
+						h.stdin.write(b'q')
+						h.stdin.flush()
+						#Let's sink the boot in
+						h.kill()
+					except BrokenPipeError as error:
+						print(error)
 
 				#for troubleshooting: uncomment
-				print("Starting first triggered video")
+				print("Iniciando reproducción video")
 				needtostart = 0
 				d = subprocess.Popen(['omxplayer', '-b', '--no-osd', movie4], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to video 4 (for killing logic)
@@ -620,62 +726,83 @@ try:
 			if (needtostart == 1):
 				#kill off other videos first
 				if (running == 0):
-					print("Killing start video")
-					m.stdin.write(b'q')
-					m.stdin.flush()
-					#Let's sink the boot in
-					m.kill()
+					print("Finalizando video principal")
+					try:
+						m.stdin.write(b'q')
+						m.stdin.flush()
+						#Let's sink the boot in
+						m.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 1):
-					print("Killing video 1")
-					a.stdin.write(b'q')
-					a.stdin.flush()
-					#Let's sink the boot in
-					a.kill()
+					print("Finalizando video 1")
+					try:
+						a.stdin.write(b'q')
+						a.stdin.flush()
+						#Let's sink the boot in
+						a.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 2):
-					print("Killing video 2")
-					b.stdin.write(b'q')
-					b.stdin.flush()
-					#Let's sink the boot in
-					b.kill()
+					print("Finalizando video 2")
+					try:
+						b.stdin.write(b'q')
+						b.stdin.flush()
+						#Let's sink the boot in
+						b.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 3):
-					print("Killing video 3")
-					c.stdin.write(b'q')
-					c.stdin.flush()
-					#Let's sink the boot in
-					c.kill()
+					print("Finalizando video 3")
+					try:
+						c.stdin.write(b'q')
+						c.stdin.flush()
+						#Let's sink the boot in
+						c.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 4):
-					print("Killing video 4")
-					d.stdin.write(b'q')
-					d.stdin.flush()
-					#Let's sink the boot in
-					d.kill()
+					print("Finalizando video 4")
+					try:
+						d.stdin.write(b'q')
+						d.stdin.flush()
+						#Let's sink the boot in
+						d.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 5):
-					print("Killing video 5 (Restarting it)")
-					e.stdin.write(b'q')
-					e.stdin.flush()
-					#Let's sink the boot in
-					e.kill()
+					print("Finalizando video 5 (Reiniciando)")
+					try:
+						e.stdin.write(b'q')
+						e.stdin.flush()
+						#Let's sink the boot in
+						e.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 6):
-					print("Killing video 6")
-					f.stdin.write(b'q')
-					f.stdin.flush()
-					#Let's sink the boot in
-					f.kill()
+					print("Finalizando video 6")
+					try:
+						f.stdin.write(b'q')
+						f.stdin.flush()
+						#Let's sink the boot in
+						f.kill()
+					except BrokenPipeError as error:
+						print(error)
 				elif (running == 7):
-					print("Killing video 7")
+					print("Finalizando video 7")
 					g.stdin.write(b'q')
 					g.stdin.flush()
 					#Let's sink the boot in
 					g.kill()
 				elif (running == 8):
-					print("Killing video 8")
+					print("Finalizando video 8")
 					h.stdin.write(b'q')
 					h.stdin.flush()
 					#Let's sink the boot in
 					h.kill()
 
 				#for troubleshooting: uncomment
-				print("Starting first triggered video")
+				print("Iniciando reproducción del quinto video")
 				needtostart = 0
 				e = subprocess.Popen(['omxplayer', '-b', '--no-osd', movie5], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
 				#Set the current running to video 5 (for killing logic)

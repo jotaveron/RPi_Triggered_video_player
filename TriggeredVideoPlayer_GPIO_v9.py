@@ -37,16 +37,16 @@ import socket
 ##############################################################
 GPIO.setmode(GPIO.BCM)
 
-#Here we're using GPIO 17 and 18 as triggers, but these can be changed
+#Here we're using GPIO 0 to 7 as triggers, but these can be changed
 #Be careful which pins you use, and do some reading on their functions
-gpio1 = 17
-gpio2 = 18
-gpio3 = 0
-gpio4 = 0
-gpio5 = 0
-gpio6 = 0
-gpio7 = 0
-gpio8 = 0
+gpio1 = 0
+gpio2 = 1
+gpio3 = 2
+gpio4 = 3
+gpio5 = 4
+gpio6 = 5
+gpio7 = 6
+gpio8 = 7
 
 #We're pulling up voltage on these, so short to ground to trigger:
 GPIO.setup(gpio1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
